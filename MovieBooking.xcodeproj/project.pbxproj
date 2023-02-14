@@ -56,6 +56,7 @@
 		4962BC3C299A6B7E00E910B8 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		4962BC3E299A724E00E910B8 /* ScrollSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollSection.swift; sourceTree = "<group>"; };
 		4962BC40299AD72200E910B8 /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
+		49B95FF1299C37C400D39B12 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		49C5D02E29950E8600AEC8B1 /* TicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
 		49C5D0302995100400AEC8B1 /* LargeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
 		49C5D0332995135800AEC8B1 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		33D8596F28ABDDCB00C842CF = {
 			isa = PBXGroup;
 			children = (
+				49B95FF1299C37C400D39B12 /* README.md */,
 				33D8597A28ABDDCB00C842CF /* MovieBooking */,
 				33D8597928ABDDCB00C842CF /* Products */,
 			);
