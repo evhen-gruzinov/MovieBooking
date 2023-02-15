@@ -1,5 +1,5 @@
 //
-//  TimeButton.swift
+//  DateButton.swift
 //  MovieBooking
 //
 //  Created by Willie Yam on 2022-08-16.
@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-struct TimeButton: View {
-    @State var hour: String = "18:00"
+struct DateButton: View {
+    @State var weekDay: String = "Sat"
+    @State var numDay: String = "23"
     
-    @State var width: CGFloat = 50
-    @State var height: CGFloat = 40
+    @State var width: CGFloat = 70
+    @State var height: CGFloat = 80
     
     @Binding var isSelected: Bool
     @State var action: () -> Void = {}
@@ -27,7 +28,10 @@ struct TimeButton: View {
             action()
         } label: {
             VStack {
-                Text(hour)
+                Text(weekDay)
+                
+                Text(numDay)
+                    .fontWeight(.bold)
             }
             .font(.subheadline)
             .foregroundColor(.white)

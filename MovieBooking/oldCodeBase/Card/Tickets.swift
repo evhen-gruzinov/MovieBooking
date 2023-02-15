@@ -105,7 +105,7 @@ struct infiniteStackView: View {
             var updatedTicket = ticket
             updatedTicket.id = UUID().uuidString
             tickets.append(updatedTicket)
-            withAnimation(.spring()) {
+            _ = withAnimation(.spring()) {
                 tickets.removeFirst()
             }
         }

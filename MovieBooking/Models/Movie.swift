@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct Movie: Hashable {
+struct Movie: Hashable, Identifiable {
     let id: UUID = UUID()
     let title: String
     let subtitle: String
@@ -12,6 +12,7 @@ struct Movie: Hashable {
     let poster: String
     let image: String
     let status: MovieStatus
+    let schedule: [Schedule]?
 }
 
 enum MovieStatus {

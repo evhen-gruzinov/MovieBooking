@@ -1,7 +1,4 @@
 //
-//  BookingView.swift
-//  MovieBooking
-//
 //  Created by Evhen Gruzinov on 13.02.2023.
 //
 
@@ -9,12 +6,13 @@ import SwiftUI
 
 struct MovieInfoView: View {
     @Environment(\.dismiss) var dismiss
-    
+
     @State var gradient = [Color("backgroundColor2").opacity(0), Color("backgroundColor2") , Color("backgroundColor2"), Color("backgroundColor2")]
-    var movie: Movie
     
-    @State var selectedDate = false
-    @State var selectedHour = false
+    
+    @State var movie: Movie
+    @State var selectedDate: UUID?
+    @State var selectedHour: String?
     @State var bindingSelection = false
     
     var body: some View {
@@ -56,48 +54,52 @@ struct MovieInfoView: View {
                         .foregroundColor(.white)
                         .padding(30)
                     
-                    Text("Select date and time")
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
                     
-                    HStack(alignment: .top, spacing: 20.0) {
-                        DateButton(weekDay: "Thu", numDay: "21", isSelected: $bindingSelection)
-                            .padding(.top, 90)
-                        DateButton(weekDay: "Fri", numDay: "22", isSelected: $bindingSelection)
-                            .padding(.top, 70)
-                        DateButton(weekDay: "Sat", numDay: "23", width: 70, height: 100, isSelected: $selectedDate) {
-                            withAnimation(.spring()) {
-                                selectedDate.toggle()
+                    if movie.status == .available {
+                        Text("Select date and time")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .padding(.bottom, 20)
+                        
+                        if let schedule = movie.schedule {
+                            HStack(alignment: .top, spacing: 10.0) {
+                                ForEach(schedule) { item in
+                                    DateButton(weekDay: "Thu", numDay: dateToString(item.date), isSelected: .constant(selectedDate == Optional(item.id))) {
+                                        withAnimation(.spring()) {
+                                            selectedDate = item.id
+                                            selectedHour = nil
+                                        }
+                                    }
+                                }
+                            }
+                            if let selectedDate = selectedDate {
+                                let selectedIndex = movie.schedule?.firstIndex(where: { item in
+                                    item.id == selectedDate
+                                })
+                                if let selectedIndex = selectedIndex {
+                                    let scheduleItem = schedule[selectedIndex]
+                                    HStack(alignment: .top, spacing: 20.0) {
+                                        ForEach(scheduleItem.time, id: \.self) { time in
+                                            TimeButton(hour: time, isSelected: .constant(selectedHour == time)) {
+                                                selectedHour = time
+                                            }
+                                        }
+                                    }
+                                    .padding(.top, 20)
+                                }
                             }
                         }
-                        .padding(.top, 30)
-                        DateButton(weekDay: "Sun", numDay: "24", isSelected: $bindingSelection)
-                            .padding(.top, 70)
-                        DateButton(weekDay: "Mon", numDay: "25", isSelected: $bindingSelection)
-                            .padding(.top, 90)
-                    }
-                    
-                    HStack(alignment: .top, spacing: 20.0) {
-                        TimeButton(hour: "16:00", isSelected: $bindingSelection)
-                            .padding(.top, 20)
-                        TimeButton(hour: "16:00", isSelected: $bindingSelection)
-                        TimeButton(hour: "16:00", width: 70, height: 40, isSelected: $selectedHour) {
-                            withAnimation(.spring()) {
-                                selectedHour.toggle()
+                        
+                        if (selectedDate != nil) && (selectedHour != nil) {
+                            NavigationLink {
+                                SeatsView()
+                            } label: {
+                                LargeButton()
+                                    .padding(.horizontal, 20)
+                                    .padding(.top, 25)
                             }
-                        } .padding(.top, -20)
-                        TimeButton(hour: "16:00", isSelected: $bindingSelection)
-                        TimeButton(hour: "16:00", isSelected: $bindingSelection)
-                            .padding(.top, 20)
-                    }
-                    
-                    NavigationLink {
-                        SeatsView()
-                    } label: {
-                        LargeButton()
-                            .padding(20)
-                            .offset(y: selectedDate && selectedHour ? 0 : 200 )
+                        }
                     }
                 }
                 .frame(maxHeight: .infinity, alignment: .top)

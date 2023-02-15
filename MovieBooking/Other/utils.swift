@@ -45,6 +45,8 @@ struct Line: Shape {
 
 //https://rekerrsive.medium.com/three-ways-to-pop-to-the-root-view-in-a-swiftui-navigationview-430aee720c9a
 struct NavigationUtil {
+    
+    // TODO: Rewrite
     static func popToRootView() {
         findNavigationController(viewController: UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController)?
             .popToRootViewController(animated: true)
@@ -61,4 +63,20 @@ for childViewController in viewController.children {
         }
 return nil
     }
+}
+
+
+
+func getDate(string: String) -> Date? {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "dd-MM-yyyy"
+    dateFormatter.timeZone = TimeZone.current
+    dateFormatter.locale = Locale.current
+    return dateFormatter.date(from: string)
+}
+
+func  dateToString(_ date: Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "d MMM"
+    return dateFormatter.string(from: date)
 }
