@@ -88,7 +88,7 @@ struct infiniteStackView: View {
     
     func getIndex() -> CGFloat {
         let index = tickets.firstIndex { ticket in
-            return self.ticket.id == ticket.id
+            self.ticket.id == ticket.id
         } ?? 0
         return CGFloat(index)
     }

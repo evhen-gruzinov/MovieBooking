@@ -19,14 +19,14 @@ struct HorizontalScrollSection: View {
                 .padding(.horizontal, 20)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 20) {
-                    ForEach(movies.indices, id: \.self) { index in
+                    ForEach(movies, id: \.self) { movie in
                         NavigationLink {
-                            BookingView()
+                            MovieInfoView(movie: movie)
                         } label: {
-                            Image(movies[index].poster)
+                            Image(movie.poster)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: 100, height: 130)
+                                .frame(width: 100, height: 150)
                                 .cornerRadius(20)
                         }
                         

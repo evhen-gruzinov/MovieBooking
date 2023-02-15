@@ -11,7 +11,7 @@ struct CustomTabBar: View {
     @Binding var currentTab: Tab
     
     var backgroundColors = [Color("purple"), Color("lightBlue"), Color("pink")]
-    var gradientCirle = [Color("cyan"), Color("cyan").opacity(0.1), Color("cyan")]
+    var gradientCircle = [Color("cyan"), Color("cyan").opacity(0.1), Color("cyan")]
     
     var body: some View {
         GeometryReader { geometry in
@@ -43,7 +43,7 @@ struct CustomTabBar: View {
                         Circle()
                             .trim(from: 0, to: CGFloat(0.5))
                             .stroke(
-                                LinearGradient(colors: gradientCirle, startPoint: .top, endPoint: .bottom),
+                                LinearGradient(colors: gradientCircle, startPoint: .top, endPoint: .bottom),
                                 style: StrokeStyle(lineWidth: 2)
                             )
                             .rotationEffect(.degrees(135))

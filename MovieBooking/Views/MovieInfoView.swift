@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct BookingView: View {
+struct MovieInfoView: View {
     @Environment(\.dismiss) var dismiss
     
     @State var gradient = [Color("backgroundColor2").opacity(0), Color("backgroundColor2") , Color("backgroundColor2"), Color("backgroundColor2")]
-    var movieData = tickets[0]
+    var movie: Movie
     
     @State var selectedDate = false
     @State var selectedHour = false
@@ -20,12 +20,12 @@ struct BookingView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Image("booking")
+                Image(movie.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxHeight: .infinity, alignment: .top)
                 
-                VStack() {
+                VStack {
                     LinearGradient(colors: gradient, startPoint: .top, endPoint: .bottom)
                         .frame(height: 600)
                 }
@@ -41,17 +41,17 @@ struct BookingView: View {
                     }
                     .padding(EdgeInsets(top: 46, leading: 20, bottom: 0, trailing: 20))
                     
-                    Text(movieData.title)
+                    Text(movie.title)
                         .font(.title3)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                         .padding(.top, 200)
                     
-                    Text(movieData.subtitle)
+                    Text(movie.subtitle)
                         .font(.title3)
                         .foregroundColor(.white)
                     
-                    Text("Dr. Stephen Strange casts a forbidden spell that opens the doorway to the multiverse, including alternate versions of...")
+                    Text(movie.description)
                         .font(.subheadline)
                         .foregroundColor(.white)
                         .padding(30)
@@ -111,6 +111,6 @@ struct BookingView: View {
 
 struct BookingView_Previews: PreviewProvider {
     static var previews: some View {
-        BookingView()
+        MovieInfoView(movie: sampleMovies.first!)
     }
 }

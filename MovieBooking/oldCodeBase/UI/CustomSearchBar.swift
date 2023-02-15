@@ -13,7 +13,7 @@ struct CustomSearchBar: View {
     var body: some View {
         HStack {
             Image(systemName: "magnifyingglass")
-            TextField("Searh", text: $searchText)
+            TextField("Search", text: $searchText)
         }
         .padding(EdgeInsets(top: 7, leading: 8, bottom: 7, trailing: 8))
         .font(.headline)

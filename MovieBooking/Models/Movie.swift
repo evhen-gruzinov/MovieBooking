@@ -4,12 +4,13 @@
 
 import Foundation
 
-struct Movie {
+struct Movie: Hashable {
     let id: UUID = UUID()
     let title: String
     let subtitle: String
     let description: String
     let poster: String
+    let image: String
     let status: MovieStatus
 }
 
