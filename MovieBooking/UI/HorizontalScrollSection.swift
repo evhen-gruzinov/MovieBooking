@@ -1,7 +1,4 @@
 //
-//  HorizontalScrollSection.swift
-//  MovieBooking
-//
 //  Created by Evhen Gruzinov on 13.02.2023.
 //
 

@@ -1,7 +1,4 @@
 //
-//  SeatsView.swift
-//  MovieBooking
-//
 //  Created by Evhen Gruzinov on 14.02.2023.
 //
 
@@ -9,6 +6,9 @@ import SwiftUI
 
 struct SeatsView: View {
     @Environment(\.dismiss) var dismiss
+    
+    @State var seatsLayout: CinemaHallLayout = sampleSeatsLayout
+//    @State var selectedSeats: [Seat] = []
     
     @State var animate = false
     @State var showButton = false
@@ -32,26 +32,14 @@ struct SeatsView: View {
             .padding(.top, 46)
             .padding(.horizontal, 20)
             
-            Image("frontSeat")
-                .padding(.top, 55)
-                .glow(color: Color("pink"), radius: 20)
-            
-            Image("seats")
-                .frame(height: 240)
-                .padding(.top, 60)
-                .padding(.horizontal, 20)
-                .onTapGesture {
-                    withAnimation(.spring()) {
-                        showButton = true
-                    }
-                }
+            SeatsLayout(seatsLayout: $seatsLayout)
             
             HStack(spacing: 20) {
-                StatusUI()
+                StatusUI(color: Color("teal"))
                 StatusUI(color: Color("majenta"), text: "Reserved")
-                StatusUI(color: Color("cyan"), text: "Selected")
+                StatusUI(color: Color("orange"), text: "Selected")
             }
-            .padding(.top, 60)
+            .padding(.top, 20)
             
             ZStack(alignment: .topLeading) {
                 Circle()
@@ -133,6 +121,6 @@ struct SeatsView: View {
 
 struct SeatsView_Previews: PreviewProvider {
     static var previews: some View {
-        SeatsView()
+        SeatsView(seatsLayout: sampleSeatsLayout)
     }
 }

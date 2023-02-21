@@ -93,7 +93,7 @@ struct MovieInfoView: View {
                         
                         if (selectedDate != nil) && (selectedHour != nil) {
                             NavigationLink {
-                                SeatsView()
+                                SeatsView(seatsLayout: sampleSeatsLayout)
                             } label: {
                                 LargeButton()
                                     .padding(.horizontal, 20)

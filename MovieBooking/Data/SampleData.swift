@@ -17,3 +17,9 @@ var sampleMovies = [
     Movie(title: "The Last of Us", subtitle: "Endure And Survive.", description: "After a global pandemic destroys civilization, a hardened survivor takes charge of a 14-year-old girl who may be humanity's last hope.", poster: "poster_tlou", image: "img_tlou", status: .coming, schedule: nil),
     Movie(title: "Avatar", subtitle: "The Way of Water", description: "Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.", poster: "poster_avatar", image: "img_avatar", status: .coming, schedule: nil)
 ]
+
+var sampleSeatsLayout: CinemaHallLayout {
+    var seats = CinemaHallLayout(title: "Aquamarine")
+    seats.addRows(count: 7, structure: RowStructure(seatsCount: 10, leadingMargin: 0, trailingMargin: 0, type: .standart))
+    return seats
+}
