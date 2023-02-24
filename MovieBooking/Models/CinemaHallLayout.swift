@@ -21,7 +21,7 @@ struct CinemaHallLayout {
             
             var seats: [Seat] = []
             for seatIndex in 1...structure.seatsCount {
-                seats.append(Seat(index: seatIndex, row: nowIndex))
+                seats.append(Seat(index: seatIndex, row: nowIndex, type: structure.type))
             }
             
             let appendingRow = Row(index: nowIndex, seats: seats, type: structure.type)
@@ -36,6 +36,7 @@ struct Seat: Hashable {
     let id: UUID = UUID()
     let index: Int
     let row: Int
+    let type: RowType
     let isBooked: Bool = false
     var isSelected: Bool = false
 }

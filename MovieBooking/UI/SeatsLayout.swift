@@ -6,6 +6,7 @@ import SwiftUI
 
 struct SeatsLayout: View {
     @Binding var seatsLayout: CinemaHallLayout
+    @Binding var selectedSeats: [Seat]
     
     var body: some View {
         VStack {
@@ -35,6 +36,14 @@ struct SeatsLayout: View {
                                 .onTapGesture {
                                     withAnimation {
                                         seatsLayout.rows[seat.row-1].seats[seat.index-1].isSelected.toggle()
+                                        
+                                        if seatsLayout.rows[seat.row-1].seats[seat.index-1].isSelected {
+                                            var savingSeat = seat
+                                            savingSeat.isSelected = true
+                                            selectedSeats.append(savingSeat)
+                                        } else {
+                                            selectedSeats = selectedSeats.filter {$0 != seat}
+                                        }
                                     }
                                 }
                         }
@@ -49,6 +58,6 @@ struct SeatsLayout: View {
 
 struct SeatsLayout_Previews: PreviewProvider {
     static var previews: some View {
-        SeatsLayout(seatsLayout: .constant(sampleSeatsLayout))
+        SeatsLayout(seatsLayout: .constant(sampleSeatsLayout), selectedSeats: .constant([]))
     }
 }

@@ -72,8 +72,14 @@ func getDate(string: String) -> Date? {
     return dateFormatter.date(from: string)
 }
 
-func  dateToString(_ date: Date) -> String {
+func dateToStringShort(_ date: Date) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "d MMM"
     return dateFormatter.string(from: date)
 }
+func dateToStringFull(_ date: Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "d MMM YYYY"
+    return dateFormatter.string(from: date)
+}
+

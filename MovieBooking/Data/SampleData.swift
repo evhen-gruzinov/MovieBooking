@@ -4,7 +4,7 @@
 
 import Foundation
 
-private let sampleDate1 = getDate(string: "15.01.2023")!
+let sampleDate1 = getDate(string: "15.01.2023")!
 private let sampleDate2 = getDate(string: "16.01.2023")!
 
 var sampleMovies = [

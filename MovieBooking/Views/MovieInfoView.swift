@@ -65,7 +65,7 @@ struct MovieInfoView: View {
                         if let schedule = movie.schedule {
                             HStack(alignment: .top, spacing: 10.0) {
                                 ForEach(schedule) { item in
-                                    DateButton(weekDay: "Thu", numDay: dateToString(item.date), isSelected: .constant(selectedDate == Optional(item.id))) {
+                                    DateButton(weekDay: "Thu", numDay: dateToStringShort(item.date), isSelected: .constant(selectedDate == Optional(item.id))) {
                                         withAnimation(.spring()) {
                                             selectedDate = item.id
                                             selectedHour = nil
@@ -91,13 +91,19 @@ struct MovieInfoView: View {
                             }
                         }
                         
-                        if (selectedDate != nil) && (selectedHour != nil) {
-                            NavigationLink {
-                                SeatsView(seatsLayout: sampleSeatsLayout)
-                            } label: {
-                                LargeButton()
-                                    .padding(.horizontal, 20)
-                                    .padding(.top, 25)
+                        if selectedDate != nil, let localSelectedHour = selectedHour {
+                            
+                            let selectedIndex = movie.schedule?.firstIndex(where: { item in
+                                item.id == selectedDate
+                            })
+                            if let selectedIndex = selectedIndex, let localSelectedDate = movie.schedule?[selectedIndex].date {
+                                NavigationLink {
+                                    SeatsView(seatsLayout: sampleSeatsLayout, selectedDate: localSelectedDate, selectedHour: localSelectedHour)
+                                } label: {
+                                    LargeButton()
+                                        .padding(.horizontal, 20)
+                                        .padding(.top, 25)
+                                }
                             }
                         }
                     }
