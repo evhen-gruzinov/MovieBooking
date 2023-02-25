@@ -7,6 +7,7 @@ import SwiftUI
 struct SeatsView: View {
     @Environment(\.dismiss) var dismiss
     
+    @State var selectedMovie: Movie
     @State var seatsLayout: CinemaHallLayout = sampleSeatsLayout
     @State var selectedDate: Date
     @State var selectedHour: String
@@ -111,7 +112,7 @@ struct SeatsView: View {
                             VStack(alignment: .leading) {
                                 ForEach(Array(selectedRows.keys.enumerated()), id: \.element) { _, key in
                                     if let seats = selectedRows[key] {
-                                        let stringSeats = "Row: \(key), Seats: \(seats.map{ String($0.index) }.joined(separator: ","))"
+                                        let stringSeats = "Row: \(key), Seats: \(seats.map{ String($0.index) }.joined(separator: ", "))"
                                         Text(stringSeats)
                                     }
                                 }
@@ -128,6 +129,8 @@ struct SeatsView: View {
                     HStack {
                         Spacer()
                         RoundButton {
+                            
+                            
                             NavigationUtil.popToRootView()
                         }
                     }.frame(maxHeight: .infinity)
@@ -148,6 +151,6 @@ struct SeatsView: View {
 
 struct SeatsView_Previews: PreviewProvider {
     static var previews: some View {
-        SeatsView(seatsLayout: sampleSeatsLayout, selectedDate: sampleDate1, selectedHour: "19:50")
+        SeatsView(selectedMovie: sampleMovies[0], seatsLayout: sampleSeatsLayout, selectedDate: sampleDate1, selectedHour: "19:50")
     }
 }

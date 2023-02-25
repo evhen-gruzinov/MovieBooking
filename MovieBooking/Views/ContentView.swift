@@ -6,10 +6,11 @@ import SwiftUI
 
 struct ContentView: View {
     @State var currentTab: Tab = .home
+    @State var tickets: [TicketModel] = sampleTickets
     
-    init() {
-        UITabBar.appearance().isHidden = true
-    }
+//    init() {
+//        UITabBar.appearance().isHidden = true
+//    }
     
     var body: some View {
         NavigationView {
@@ -19,7 +20,7 @@ struct ContentView: View {
                     
                     Text("Location").tag(Tab.location)
                     
-                    TicketView().tag(Tab.ticket)
+                    TicketView(tickets: $tickets).tag(Tab.ticket)
                     
                     Text("Category").tag(Tab.category)
                     

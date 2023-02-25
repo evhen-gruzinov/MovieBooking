@@ -98,7 +98,7 @@ struct MovieInfoView: View {
                             })
                             if let selectedIndex = selectedIndex, let localSelectedDate = movie.schedule?[selectedIndex].date {
                                 NavigationLink {
-                                    SeatsView(seatsLayout: sampleSeatsLayout, selectedDate: localSelectedDate, selectedHour: localSelectedHour)
+                                    SeatsView(selectedMovie: movie, seatsLayout: sampleSeatsLayout, selectedDate: localSelectedDate, selectedHour: localSelectedHour)
                                 } label: {
                                     LargeButton()
                                         .padding(.horizontal, 20)

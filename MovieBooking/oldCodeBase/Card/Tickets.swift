@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct Tickets: View {
-    @State var tickets: [TicketModel] = [
-        TicketModel(image: "thor", title: "Thor", subtitle: "Love and Thunder", top: "thor-top", bottom: "thor-bottom"),
-        TicketModel(image: "panther", title: "Black Panther", subtitle: "Wakanda Forever", top: "panther-top", bottom: "panther-bottom"),
-        TicketModel(image: "scarlet", title: "Doctor Strange", subtitle: "in the Multiverse of Madness", top: "scarlet-top", bottom: "scarlet-bottom")
-    ]
+    @State var tickets: [TicketModel]
     
     var body: some View {
         ZStack {
@@ -27,7 +23,7 @@ struct Tickets: View {
 
 struct Tickets_Previews: PreviewProvider {
     static var previews: some View {
-        Tickets()
+        Tickets(tickets: sampleTickets)
     }
 }
 
@@ -42,7 +38,7 @@ struct infiniteStackView: View {
     @State var height: CGFloat = 0
     
     var body: some View {
-        Ticket(title: ticket.title, subtitle: ticket.subtitle, top: ticket.top, bottom: ticket.bottom, height: $height)
+        UITicket(ticket: ticket, movies: sampleMovies)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .zIndex(getIndex() == 0 && offset > 100 ? Double(CGFloat(tickets.count) - getIndex()) - 1 : Double(CGFloat(tickets.count) - getIndex()))
             .rotationEffect(.init(degrees: getRotation(angle: 10)))
