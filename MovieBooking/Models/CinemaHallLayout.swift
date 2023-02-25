@@ -20,8 +20,21 @@ struct CinemaHallLayout {
             nowIndex += 1
             
             var seats: [Seat] = []
+            
+            if structure.leadingMargin > 0 {
+                for _ in 1...structure.leadingMargin {
+                    seats.append(Seat(index: 0, row: nowIndex, type: structure.type, isMargin: true))
+                }
+            }
+            
             for seatIndex in 1...structure.seatsCount {
-                seats.append(Seat(index: seatIndex, row: nowIndex, type: structure.type))
+                seats.append(Seat(index: seatIndex, row: nowIndex, type: structure.type, isMargin: false))
+            }
+            
+            if structure.trailingMargin > 0 {
+                for _ in 1...structure.trailingMargin {
+                    seats.append(Seat(index: 0, row: nowIndex, type: structure.type, isMargin: true))
+                }
             }
             
             let appendingRow = Row(index: nowIndex, seats: seats, type: structure.type)
@@ -39,11 +52,14 @@ struct Seat: Hashable {
     let type: RowType
     let isBooked: Bool = false
     var isSelected: Bool = false
+    let isMargin: Bool
 }
 
 struct Row: Hashable {
     let index: Int
     var seats: [Seat]
+//    let leadingMargin: Int
+//    let trailingMargin: Int
     let type: RowType
 }
 

@@ -22,6 +22,7 @@ var sampleMovies = [
 
 var sampleSeatsLayout: CinemaHallLayout {
     var seats = CinemaHallLayout(title: "Aquamarine")
+    seats.addRows(count: 1, structure: RowStructure(seatsCount: 7, leadingMargin: 1, trailingMargin: 2, type: .standart))
     seats.addRows(count: 7, structure: RowStructure(seatsCount: 10, leadingMargin: 0, trailingMargin: 0, type: .standart))
     return seats
 }

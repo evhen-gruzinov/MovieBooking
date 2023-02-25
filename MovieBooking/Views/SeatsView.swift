@@ -55,7 +55,7 @@ struct SeatsView: View {
             .padding(.top, 46)
             .padding(.horizontal, 20)
             
-            SeatsLayout(seatsLayout: $seatsLayout, selectedSeats: $selectedSeats)
+            HallLayout(seatsLayout: $seatsLayout, selectedSeats: $selectedSeats)
             
             HStack(spacing: 20) {
                 StatusUI(color: Color("teal"))
