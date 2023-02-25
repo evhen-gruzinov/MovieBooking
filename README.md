@@ -1,6 +1,6 @@
 # Movie Booking
 
-![Movie Ticket Booking App.jpeg](/Users/gruzinov/Desktop/MovieBooking/MovieBooking/Movie%20Ticket%20Booking%20App.jpeg)
+![Movie Ticket Booking App.jpeg](MovieTicketBookingApp.jpeg)
 
 A template application for a cinema with the ability to purchase and store movie tickets.
 
