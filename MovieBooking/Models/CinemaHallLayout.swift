@@ -10,11 +10,11 @@ struct CinemaHallLayout {
     
     init(title: String) {
         self.title = title
-        self.rows = []
+        rows = []
     }
     
     mutating func addRows(count: Int, structure: RowStructure) {
-        var nowRows = self.rows
+        var nowRows = rows
         var nowIndex = nowRows.count
         for _ in 1...count {
             nowIndex += 1
@@ -28,7 +28,7 @@ struct CinemaHallLayout {
             
             nowRows.append(appendingRow)
         }
-        self.rows = nowRows
+        rows = nowRows
     }
 }
 

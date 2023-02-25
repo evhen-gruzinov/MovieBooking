@@ -5,7 +5,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    let movies: [Movie] = sampleMovies
+    let movies: [Movie]
     
     var body: some View {
         ZStack {
@@ -39,6 +39,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(movies: sampleMovies)
     }
 }

@@ -129,8 +129,24 @@ struct SeatsView: View {
                     HStack {
                         Spacer()
                         RoundButton {
-                            
-                            
+                            TicketsStorage.load { result in
+                                switch result {
+                                case .success(let t):
+                                    var tickets = t
+                                    for row in selectedRows {
+                                        tickets.append(Ticket(movieID: Int(selectedMovie.movieId), date: selectedDate, time: selectedHour, row: row.key, seats: row.value.map{ $0.index }))
+                                    }
+                                    
+                                    TicketsStorage.save(tickets: tickets) { result in
+                                        if case .failure(let error) = result {
+                                            fatalError(error.localizedDescription)
+                                        }
+                                    }
+                                    
+                                case .failure(let error):
+                                    fatalError(error.localizedDescription)
+                                }
+                            }
                             NavigationUtil.popToRootView()
                         }
                     }.frame(maxHeight: .infinity)

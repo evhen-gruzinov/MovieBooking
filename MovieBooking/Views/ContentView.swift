@@ -6,7 +6,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State var currentTab: Tab = .home
-    @State var tickets: [TicketModel] = sampleTickets
+    @State var tickets: [Ticket] = sampleTickets
+    @State var movies: [Movie] = sampleMovies
     
 //    init() {
 //        UITabBar.appearance().isHidden = true
@@ -16,11 +17,12 @@ struct ContentView: View {
         NavigationView {
             VStack(spacing: 0.0) {
                 TabView(selection: $currentTab) {
-                    HomeView().tag(Tab.home)
+                    HomeView(movies: movies).tag(Tab.home)
                     
                     Text("Location").tag(Tab.location)
                     
-                    TicketView(tickets: $tickets).tag(Tab.ticket)
+                    TicketsView().tag(Tab.ticket)
+//                    TicketsView(tickets: $tickets).tag(Tab.ticket)
                     
                     Text("Category").tag(Tab.category)
                     
@@ -29,6 +31,27 @@ struct ContentView: View {
                 CustomTabBar(currentTab: $currentTab)
             }
             .ignoresSafeArea(.keyboard)
+        }
+        .onAppear {
+            
+            // Loader of movies, disabled because not need now
+//            MoviesStorage.load { result in
+//                switch result {
+//                case .success(let movies):
+//                    if movies.isEmpty {
+//                        self.movies = sampleMovies
+//                        MoviesStorage.save(movies: sampleMovies) { result in
+//                            if case .failure(let error) = result {
+//                                fatalError(error.localizedDescription)
+//                            }
+//                        }
+//                    } else {
+//                        self.movies = movies
+//                    }
+//                case .failure(let error):
+//                    fatalError(error.localizedDescription)
+//                }
+//            }
         }
     }
 }

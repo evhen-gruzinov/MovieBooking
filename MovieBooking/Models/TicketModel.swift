@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct TicketModel: Identifiable {
+struct Ticket: Identifiable, Codable {
     var id: String = UUID().uuidString
     var globalID: UUID = UUID()
     let movieID: Int

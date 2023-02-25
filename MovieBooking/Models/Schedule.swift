@@ -4,8 +4,8 @@
 
 import Foundation
 
-struct Schedule: Hashable, Identifiable {
-    let id: UUID = UUID()
+struct Schedule: Hashable, Identifiable, Codable {
+    var id: UUID = UUID()
     let date: Date
     let time: [String]
 }

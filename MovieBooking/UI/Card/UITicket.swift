@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UITicket: View {
-    @State var ticket: TicketModel
+    @State var ticket: Ticket
     @State var movies: [Movie]
     var movie: Movie {getMovieFrom(id: ticket.movieID, movies: movies) ?? Movie(movieId: 0, title: "No data", subtitle: "", description: "", poster: "", image: "", status: .over, schedule: nil)}
     

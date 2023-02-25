@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct Tickets: View {
-    @State var tickets: [TicketModel]
+struct UITicketsStack: View {
+    @Binding var tickets: [Ticket]
     
     var body: some View {
         ZStack {
@@ -23,14 +23,14 @@ struct Tickets: View {
 
 struct Tickets_Previews: PreviewProvider {
     static var previews: some View {
-        Tickets(tickets: sampleTickets)
+        UITicketsStack(tickets: .constant(sampleTickets))
     }
 }
 
 
 struct infiniteStackView: View {
-    @Binding var tickets: [TicketModel]
-    var ticket: TicketModel
+    @Binding var tickets: [Ticket]
+    var ticket: Ticket
     
     @GestureState var isDragging: Bool = false
     @State var offset: CGFloat = .zero

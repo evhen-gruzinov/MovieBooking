@@ -10,17 +10,15 @@
 		28AF015E87DBBD0F3D1FD142 /* StatusUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF08428812B6468FD40BE6 /* StatusUI.swift */; };
 		28AF020153A10E55F819CA2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF073A7A8D122B58B147FE /* ContentView.swift */; };
 		28AF0319B465248EA8F74CFF /* SeatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF01A340EAC3B30FAA5BF2 /* SeatsView.swift */; };
-		28AF0357E0845E5E5E70874D /* TicketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF0078496F8A0CFD7E5288 /* TicketData.swift */; };
 		28AF037359A9847F05AB1965 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF01EC3BB2A783D5C67B43 /* CircleButton.swift */; };
 		28AF03B5075E34BAFEC1A9DC /* BackgroundAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF0840EF9DC9FD350B445A /* BackgroundAnimation.swift */; };
-		28AF03BBFE2AD776D657E589 /* PosterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF059F57A93460A228BC78 /* PosterData.swift */; };
 		28AF03BD386A8193074DBF2A /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF0B872E6FF9A7643CCAEA /* CustomSearchBar.swift */; };
 		28AF05B3AC119D9C098D41D3 /* TabData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF04E6E48F532D5E526AE5 /* TabData.swift */; };
-		28AF0708E7CD8FB2CCD7FC8E /* Tickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF0CB9D1FF0E1638B712E6 /* Tickets.swift */; };
+		28AF0708E7CD8FB2CCD7FC8E /* UITicketsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF0CB9D1FF0E1638B712E6 /* UITicketsStack.swift */; };
 		28AF07B3DCC4B666FACD5244 /* UITicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF03971A1FEF42EB7DFFE5 /* UITicket.swift */; };
 		28AF083D7255C8CAF118376E /* DateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF03BDE2D751D5380350C9 /* DateButton.swift */; };
 		28AF0A4212F831CB36837A55 /* MovieInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF08F6E4B6D7FB6FFA1968 /* MovieInfoView.swift */; };
-		28AF0A78FA5D4E4B466B7E15 /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF011831E8F7DFDF1FF698 /* TicketView.swift */; };
+		28AF0A78FA5D4E4B466B7E15 /* TicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF011831E8F7DFDF1FF698 /* TicketsView.swift */; };
 		28AF0A9C395F9D442B4F4754 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF05A944E3A5CE253B0594 /* HomeView.swift */; };
 		28AF0B296484A092623EFEBB /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF0BA1AFA596050B8FDD27 /* utils.swift */; };
 		28AF0B5CE6EEC7E62F8E6F54 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF029B6C665EB3777E1647 /* LargeButton.swift */; };
@@ -37,13 +35,14 @@
 		49038032299E542F002EF44B /* SeatsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49038031299E542F002EF44B /* SeatsLayout.swift */; };
 		49080C6A299C5C4E001663A4 /* CinemaHallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49080C69299C5C4E001663A4 /* CinemaHallLayout.swift */; };
 		49881CA729A9FD6600A5CDE3 /* TicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49881CA629A9FD6600A5CDE3 /* TicketModel.swift */; };
+		49D85DB729AA3082003B7B3D /* MoviesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D85DB629AA3082003B7B3D /* MoviesStorage.swift */; };
+		49D85DB929AA37BF003B7B3D /* TicketsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D85DB829AA37BF003B7B3D /* TicketsStorage.swift */; };
 		49FD176E299CB09D0056B4E3 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FD176D299CB09D0056B4E3 /* Session.swift */; };
 		49FD1770299CB1520056B4E3 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FD176F299CB1520056B4E3 /* Schedule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		28AF0078496F8A0CFD7E5288 /* TicketData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketData.swift; sourceTree = "<group>"; };
-		28AF011831E8F7DFDF1FF698 /* TicketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
+		28AF011831E8F7DFDF1FF698 /* TicketsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsView.swift; sourceTree = "<group>"; };
 		28AF01A340EAC3B30FAA5BF2 /* SeatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsView.swift; sourceTree = "<group>"; };
 		28AF01EC3BB2A783D5C67B43 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		28AF029B6C665EB3777E1647 /* LargeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
@@ -52,7 +51,6 @@
 		28AF03BDE2D751D5380350C9 /* DateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateButton.swift; sourceTree = "<group>"; };
 		28AF049F5DF6A0CA32C3D2AE /* TimeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeButton.swift; sourceTree = "<group>"; };
 		28AF04E6E48F532D5E526AE5 /* TabData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabData.swift; sourceTree = "<group>"; };
-		28AF059F57A93460A228BC78 /* PosterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterData.swift; sourceTree = "<group>"; };
 		28AF05A944E3A5CE253B0594 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		28AF073A7A8D122B58B147FE /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		28AF0840EF9DC9FD350B445A /* BackgroundAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundAnimation.swift; sourceTree = "<group>"; };
@@ -64,7 +62,7 @@
 		28AF0A935800BDB42DA88357 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		28AF0B872E6FF9A7643CCAEA /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		28AF0BA1AFA596050B8FDD27 /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
-		28AF0CB9D1FF0E1638B712E6 /* Tickets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tickets.swift; sourceTree = "<group>"; };
+		28AF0CB9D1FF0E1638B712E6 /* UITicketsStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITicketsStack.swift; sourceTree = "<group>"; };
 		28AF0D99D2F690F229D25CE7 /* HorizontalScrollSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalScrollSection.swift; sourceTree = "<group>"; };
 		28AF0F485B591E20F6AF7A4C /* CircleBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleBackground.swift; sourceTree = "<group>"; };
 		33D8597828ABDDCB00C842CF /* MovieBooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +73,8 @@
 		4970DD4229A77DFD008BEBE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		49881CA629A9FD6600A5CDE3 /* TicketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketModel.swift; sourceTree = "<group>"; };
 		49B95FF1299C37C400D39B12 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		49D85DB629AA3082003B7B3D /* MoviesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesStorage.swift; sourceTree = "<group>"; };
+		49D85DB829AA37BF003B7B3D /* TicketsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsStorage.swift; sourceTree = "<group>"; };
 		49FD176D299CB09D0056B4E3 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		49FD176F299CB1520056B4E3 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +93,8 @@
 		28AF02157391CF861A800C6A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				28AF0F33BD37C188F52F69B8 /* old */,
+				28AF0408A988EBB6DE6CFDF7 /* Card */,
 				493D642B299D047D005A76FF /* Buttons */,
 				28AF0840EF9DC9FD350B445A /* BackgroundAnimation.swift */,
 				28AF0D99D2F690F229D25CE7 /* HorizontalScrollSection.swift */,
@@ -115,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				28AF03971A1FEF42EB7DFFE5 /* UITicket.swift */,
-				28AF0CB9D1FF0E1638B712E6 /* Tickets.swift */,
+				28AF0CB9D1FF0E1638B712E6 /* UITicketsStack.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -124,15 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				28AF08C7D4C7DEF36733D9CE /* SampleData.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		28AF08BE1EBB36BED5F7EC2B /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				28AF0078496F8A0CFD7E5288 /* TicketData.swift */,
-				28AF059F57A93460A228BC78 /* PosterData.swift */,
+				49D85DB629AA3082003B7B3D /* MoviesStorage.swift */,
+				49D85DB829AA37BF003B7B3D /* TicketsStorage.swift */,
 				28AF04E6E48F532D5E526AE5 /* TabData.swift */,
 			);
 			path = Data;
@@ -166,7 +161,7 @@
 				28AF05A944E3A5CE253B0594 /* HomeView.swift */,
 				28AF08F6E4B6D7FB6FFA1968 /* MovieInfoView.swift */,
 				28AF01A340EAC3B30FAA5BF2 /* SeatsView.swift */,
-				28AF011831E8F7DFDF1FF698 /* TicketView.swift */,
+				28AF011831E8F7DFDF1FF698 /* TicketsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,23 +184,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		28AF0EF6A81BDC8806223F69 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		28AF0F33BD37C188F52F69B8 /* oldCodeBase */ = {
+		28AF0F33BD37C188F52F69B8 /* old */ = {
 			isa = PBXGroup;
 			children = (
 				28AF03C36D470F2F383CB605 /* UI */,
-				28AF0EF6A81BDC8806223F69 /* Views */,
-				28AF0408A988EBB6DE6CFDF7 /* Card */,
-				28AF08BE1EBB36BED5F7EC2B /* Data */,
 				28AF0E03E41A67756F046D28 /* Buttons */,
 			);
-			path = oldCodeBase;
+			path = old;
 			sourceTree = "<group>";
 		};
 		33D8596F28ABDDCB00C842CF = {
@@ -233,7 +218,6 @@
 				33D8597F28ABDDCC00C842CF /* Assets.xcassets */,
 				28AF0773B1A98C646EFDFF9E /* Data */,
 				28AF0918D0939F7E31DF1D06 /* Models */,
-				28AF0F33BD37C188F52F69B8 /* oldCodeBase */,
 				28AF09EC4AD48AB082CE5C84 /* Other */,
 				28AF02157391CF861A800C6A /* UI */,
 				28AF0BDF1B426B026F56DD02 /* Views */,
@@ -326,20 +310,19 @@
 				28AF015E87DBBD0F3D1FD142 /* StatusUI.swift in Sources */,
 				28AF0CD9ECC35E785C231459 /* CustomTabBar.swift in Sources */,
 				28AF03BD386A8193074DBF2A /* CustomSearchBar.swift in Sources */,
-				28AF0A78FA5D4E4B466B7E15 /* TicketView.swift in Sources */,
+				28AF0A78FA5D4E4B466B7E15 /* TicketsView.swift in Sources */,
 				28AF0319B465248EA8F74CFF /* SeatsView.swift in Sources */,
 				49881CA729A9FD6600A5CDE3 /* TicketModel.swift in Sources */,
 				49080C6A299C5C4E001663A4 /* CinemaHallLayout.swift in Sources */,
 				28AF07B3DCC4B666FACD5244 /* UITicket.swift in Sources */,
-				28AF0708E7CD8FB2CCD7FC8E /* Tickets.swift in Sources */,
-				28AF0357E0845E5E5E70874D /* TicketData.swift in Sources */,
-				28AF03BBFE2AD776D657E589 /* PosterData.swift in Sources */,
+				28AF0708E7CD8FB2CCD7FC8E /* UITicketsStack.swift in Sources */,
 				28AF05B3AC119D9C098D41D3 /* TabData.swift in Sources */,
 				28AF0B5CE6EEC7E62F8E6F54 /* LargeButton.swift in Sources */,
 				28AF0FE44EA62A6F69D8A8E2 /* TimeButton.swift in Sources */,
 				28AF083D7255C8CAF118376E /* DateButton.swift in Sources */,
 				28AF037359A9847F05AB1965 /* CircleButton.swift in Sources */,
 				49FD176E299CB09D0056B4E3 /* Session.swift in Sources */,
+				49D85DB729AA3082003B7B3D /* MoviesStorage.swift in Sources */,
 				28AF0F2E75050AC3A4083884 /* RoundButton.swift in Sources */,
 				49038032299E542F002EF44B /* SeatsLayout.swift in Sources */,
 				28AF0B296484A092623EFEBB /* utils.swift in Sources */,
@@ -347,6 +330,7 @@
 				28AF0A9C395F9D442B4F4754 /* HomeView.swift in Sources */,
 				28AF03B5075E34BAFEC1A9DC /* BackgroundAnimation.swift in Sources */,
 				28AF0CB9053F98D684D59F96 /* HorizontalScrollSection.swift in Sources */,
+				49D85DB929AA37BF003B7B3D /* TicketsStorage.swift in Sources */,
 				28AF0DF92DE3FDC8CEF67018 /* Movie.swift in Sources */,
 				28AF0DD80B1F3F6685A477E3 /* SampleData.swift in Sources */,
 				49FD1770299CB1520056B4E3 /* Schedule.swift in Sources */,
@@ -407,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -461,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

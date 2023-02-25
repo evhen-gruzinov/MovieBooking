@@ -4,8 +4,8 @@
 
 import SwiftUI
 
-struct TicketView: View {
-    @Binding var tickets: [TicketModel]
+struct TicketsView: View {
+    @State var tickets: [Ticket] = []
     @State var animate = false
     
     var body: some View {
@@ -24,7 +24,7 @@ struct TicketView: View {
                 .offset(x: animate ? -100 : -130, y:animate ? -150 : -100)
             
             
-            VStack (spacing: 30) {
+            VStack (spacing: 25) {
                 Text("Mobile ticket")
                     .font(.title3)
                     .foregroundColor(.white)
@@ -34,20 +34,31 @@ struct TicketView: View {
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
             }
-            .padding(30)
+            .padding(.top, 10)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             
-            Tickets(tickets: tickets)
-                .padding(.top, 50)
+            UITicketsStack(tickets: $tickets)
+                .padding(.top, 100)
         }
         .background(
             LinearGradient(gradient: Gradient(colors: [Color("backgroundColor"), Color("backgroundColor2")]), startPoint: .top, endPoint: .bottom)
         )
+        .onAppear {
+            TicketsStorage.load { result in
+                switch result {
+                case .success(let tickets):
+                    self.tickets = tickets
+                case .failure(let error):
+                    fatalError(error.localizedDescription)
+                }
+            }
+        }
     }
 }
 
 struct TicketView_Previews: PreviewProvider {
     static var previews: some View {
-        TicketView(tickets: .constant(sampleTickets))
+        TicketsView()
+//        TicketsView(tickets: .constant(sampleTickets))
     }
 }

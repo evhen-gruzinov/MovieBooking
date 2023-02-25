@@ -4,8 +4,8 @@
 
 import Foundation
 
-struct Movie: Hashable, Identifiable {
-    let id: UUID = UUID()
+struct Movie: Hashable, Identifiable, Codable {
+    var id: UUID = UUID()
     let movieId: Int
     let title: String
     let subtitle: String
@@ -25,7 +25,7 @@ func getMovieFrom(id: Int, movies: [Movie]) -> Movie? {
     return nil
 }
 
-enum MovieStatus {
+enum MovieStatus: Codable {
     case available
     case coming
     case over
